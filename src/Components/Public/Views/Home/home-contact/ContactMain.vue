@@ -80,36 +80,3 @@
     },
   };
 </script>
-
-<!-- <style lang="scss">
-
-.quillWrapper {
-    border: 0;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, .25);
-    outline: none;
-    margin-top: .5em;   
-    transition: box-shadow .3s ease-in-out;
-
-    & > .ql-toolbar {
-        border-radius: 8px 8px 0 0;
-        border: 0 !important;
-        background: linear-gradient(var(--color-primary-1), var(--color-primary-2));
-    }
-    & > .ql-container {
-        border: 0 !important;
-    }
-
-    .ql-fill {
-        fill: white !important;
-    }
-    .ql-stroke {
-        stroke: white !important;
-    }
-    .ql-picker-label {
-        color: white !important;
-    }
-}
-    
-</style> -->
