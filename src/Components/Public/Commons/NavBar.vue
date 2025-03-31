@@ -20,12 +20,9 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: "NavBar"
-}
+<script setup>
+    import {RouterLink} from "vue-router"
 </script>
-
 <style>
     .navbar {
         display: flex;

@@ -1,71 +1,74 @@
 <template>
-    <div class="snow-wrapper">
+  <div class="snow-wrapper">
     <div class="snow layer1 b"></div>
     <div class="snow layer1 a"></div>
-    <div class="snow layer1"></div> 
+    <div class="snow layer1"></div>
     <div class="snow layer2 b"></div>
     <div class="snow layer2 a"></div>
     <div class="snow layer2"></div>
     <div class="snow layer3 b"></div>
     <div class="snow layer3 a"></div>
     <div class="snow layer3"></div>
-    </div>
+  </div>
 </template>
 
 <script>
-import Numbers from "@/Utils/Numbers"
+  import Numbers from "@/Utils/Numbers";
 
-export default {
+  export default {
     name: "Snow",
     computed: {
-        getMaxDepth() {
-            let tmp = this.flakeToGenerate
-            tmp = tmp.sort((a, b) => b.depth - a.depth)
-            return tmp[0].depth + 1
-        }
+      getMaxDepth() {
+        let tmp = this.flakeToGenerate;
+        tmp = tmp.sort((a, b) => b.depth - a.depth);
+        return tmp[0].depth + 1;
+      },
     },
     data() {
-        return {
-            flakeToGenerate: [
-                {depth: 6, amount: 100},
-                {depth: 4, amount: 50},
-                {depth: 2, amount: 25},
-                {depth: 0, amount: 10},
-            ],
-            flakes: [],
-            speed: 1,
-        }
+      return {
+        flakeToGenerate: [
+          { depth: 6, amount: 100 },
+          { depth: 4, amount: 50 },
+          { depth: 2, amount: 25 },
+          { depth: 0, amount: 10 },
+        ],
+        flakes: [],
+        speed: 1,
+      };
     },
     methods: {
-        animate() {
-            this.flakes.map((flake) => {
-                flake.y = flake.y >= 100 ? -5 : flake.y+ ((1/flake.depth) * this.speed * flake.relativeSpeed) 
-                flake.x = flake.x >= 100 ? -5 : flake.x+this.speed/(8)* flake.relativeSpeed
-            })
-            window.requestAnimationFrame(this.animate)
-        },
+      animate() {
+        this.flakes.map((flake) => {
+          flake.y =
+            flake.y >= 100
+              ? -5
+              : flake.y + (1 / flake.depth) * this.speed * flake.relativeSpeed;
+          flake.x =
+            flake.x >= 100
+              ? -5
+              : flake.x + (this.speed / 8) * flake.relativeSpeed;
+        });
+        window.requestAnimationFrame(this.animate);
+      },
     },
     mounted() {
-
-
-        for (let fl of this.flakeToGenerate) {
-            for (let i = 0 ; i < fl.amount ; i++) {
-                this.flakes.push({
-                    depth: fl.depth,
-                    x: Numbers.rand(0, 100),
-                    y: Numbers.rand(0, 100),
-                    relativeSpeed: Math.random()+.5
-                })
-            }
+      for (let fl of this.flakeToGenerate) {
+        for (let i = 0; i < fl.amount; i++) {
+          this.flakes.push({
+            depth: fl.depth,
+            x: Numbers.rand(0, 100),
+            y: Numbers.rand(0, 100),
+            relativeSpeed: Math.random() + 0.5,
+          });
         }
+      }
 
-        requestAnimationFrame(this.animate)
-    }
-
-}
+      requestAnimationFrame(this.animate);
+    },
+  };
 </script>
 
-<style lang="scss">
+<!-- <style lang="scss">
     .snow-wrapper {
         position: fixed;
         width: 100%;
@@ -140,4 +143,4 @@ export default {
             transform: translateY(300vh); 
         }
     }
-</style>
+</style> -->

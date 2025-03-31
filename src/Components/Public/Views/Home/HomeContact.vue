@@ -1,21 +1,21 @@
 <template>
     <div class="contact section" id="home-contact">
 
-        <form action="" id="contact-form">
+        <form action="https://formspree.io/f/xovjgqyj" method="POST" id="contact-form">
             <div class="contact-subsection">
                 <div class="contact-left">
                     <div class="contact-title title">Contactez-nous</div>
                     <div class="input-control">
                         <label for="name">Nom et prénom</label>
-                        <input type="text" id="name">
+                        <input type="text" id="name" name="name">
                     </div>
                     <div class="input-control">
                         <label for="mail">Adresse E-Mail</label>
-                        <input type="text" id="mail">
+                        <input type="text" id="mail" name="email">
                     </div>
                     <div class="input-control">
                         <label for="phone">Numéro de téléphone</label>
-                        <input type="text" id="phone">
+                        <input type="text" id="phone" name="phone">
                     </div>
                 </div>
                 <div class="contact-right">
@@ -42,13 +42,8 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: "HomeContact",
-    components: {
-        ContactMain: () => import("./HomeContact/ContactMain")
-    }
-}
+<script setup>
+import ContactMain from "./home-contact/ContactMain.vue"
 </script>
 
 <style scoped>

@@ -1,53 +1,26 @@
 {
   "name": "pere-noel-de-beauvais",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "caniuse-lite": "^1.0.30001503",
-    "core-js": "^3.6.5",
-    "emailjs-com": "^3.2.0",
-    "sass": "^1.48.0",
-    "vue": "^2.6.11",
-    "vue-plugin-load-script": "^2.1.1",
-    "vue-router": "^3.5.3",
-    "vue2-editor": "^2.10.3"
+    "@tailwindcss/vite": "^4.0.17",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "tailwindcss": "^4.0.17",
+    "unplugin-auto-import": "^19.1.2",
+    "vite": "^6.2.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "sass-loader": "^10.2.0",
-    "style-loader": "^3.3.1",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {
-      "no-unused-vars": "off",
-      "no-undef": "off"
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "sass": "^1.86.0"
+  }
 }

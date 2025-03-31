@@ -4,15 +4,6 @@
   </div>
 </template>
 
+<script setup></script>
 
-<script>
-export default {
-  name: 'App',
-  components: {
-  }
-}
-</script>
-
-<style>
-
-</style>
+<style></style>
