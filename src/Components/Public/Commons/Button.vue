@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <button
+    v-bind="$attrs"
+    class="cursor-pointer"
+  >
     <slot></slot>
-  </div>
+  </button>
 </template>
 
 <script setup>

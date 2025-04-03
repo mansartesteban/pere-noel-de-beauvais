@@ -1,7 +1,11 @@
 <template>
   <div
-    class="appbar drop-shadow-[0_0_32px_rgba(0,0,0,.33)] flex flex-col fixed top-0 w-screen z-1 transition-colors duration-300"
-    :class="{ 'bg-white': hasScrolled, 'h-12': hasScrolled && !opened }"
+    class="appbar drop-shadow-[0_0_32px_rgba(0,0,0,.33)] flex flex-col lg:flex-row lg:justify-between fixed top-0 w-screen z-1 transition-colors duration-300"
+    :class="{
+      'bg-white': hasScrolled,
+      'lg:justify-center': !hasScrolled,
+      'h-12': hasScrolled && !opened,
+    }"
   >
     <div
       class="text-primary-500 text-xl font-[PermanentMarker] p-4"
@@ -16,7 +20,7 @@
 
     <Button
       @click="toggleMenu"
-      class="toggle-button self-end p-4 absolute transition-colors"
+      class="lg:hidden toggle-button self-end p-4 absolute transition-colors"
       :class="{
         'text-primary-500': hasScrolled || opened,
         'text-white': !hasScrolled && !opened,
@@ -33,7 +37,7 @@
     </Button>
     <nav
       id="menu"
-      class="navbar flex flex-col items-center bg-white h-0 transition-all overflow-y-auto"
+      class="lg:hidden navbar flex flex-col items-center bg-white h-0 transition-all overflow-y-auto"
       :class="{ 'h-full p-8 gap-8': opened }"
     >
       <template v-for="link in navLinks">
@@ -41,6 +45,23 @@
           class="text-2xl font-[PermanentMarker] text-primary-500"
           :to="link.to"
           exact
+          @click="toggleMenu(false)"
+          >{{ link.title }}</router-link
+        >
+      </template>
+    </nav>
+
+    <nav class="hidden lg:flex gap-8 py-2 px-8">
+      <template v-for="link in navLinks">
+        <router-link
+          class="text-lg lg:text-xl xl:text-2xl font-[PermanentMarker]"
+          :class="{
+            'text-primary-500': hasScrolled,
+            'text-white': !hasScrolled,
+          }"
+          :to="link.to"
+          exact
+          @click="toggleMenu(false)"
           >{{ link.title }}</router-link
         >
       </template>

@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-col gap-8 items-center p-8 mt-16">
+  <div
+    ref="galleryElement"
+    class="flex flex-col lg:grid lg:grid-cols-3 gap-8 items-center p-8 mt-16"
+  >
     <img
       v-for="(img, i) in gallery"
       :key="'gallery-img-' + i"
@@ -26,6 +29,7 @@
 <script setup>
   const gallery = ref([]);
   const zoomedImage = ref(null);
+  const galleryElement = ref(null);
 
   onMounted(() => {
     for (let i = 1; i <= 46; i++) {
@@ -34,6 +38,20 @@
         focused: false,
       });
     }
+
+    galleryElement.value.addEventListener("touchstart", (e) => {
+      if (zoomedImage.value !== null) {
+        e.preventDefault();
+      }
+      touchstartX = e.changedTouches[0].screenX;
+    });
+
+    galleryElement.value.addEventListener("touchend", (e) => {
+      touchendX = e.changedTouches[0].screenX;
+      if (zoomedImage.value !== null) {
+        checkDirection();
+      }
+    });
   });
 
   const zoom = (index) => {
@@ -53,7 +71,7 @@
   let touchstartX = 0;
   let touchendX = 0;
 
-  function checkDirection() {
+  const checkDirection = () => {
     if (touchendX < touchstartX) {
       // Swipe left
       zoomedImage.value = Math.min(
@@ -65,14 +83,8 @@
       // Swipe right
       zoomedImage.value = Math.max(zoomedImage.value - 1, 0);
     }
-  }
-
-  document.addEventListener("touchstart", (e) => {
-    touchstartX = e.changedTouches[0].screenX;
-  });
-
-  document.addEventListener("touchend", (e) => {
-    touchendX = e.changedTouches[0].screenX;
-    checkDirection();
-  });
+    if (touchendX === touchstartX) {
+      unzoom();
+    }
+  };
 </script>

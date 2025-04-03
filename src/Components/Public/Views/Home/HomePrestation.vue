@@ -6,7 +6,6 @@
     <div class="text-4xl text-center font-[PermanentMarker]">Prestations</div>
 
     <PrestationCard
-      class="prestation-card"
       :class="{ 'show-price': showPrice1 }"
       @click="showPrice1 = !showPrice1"
     >

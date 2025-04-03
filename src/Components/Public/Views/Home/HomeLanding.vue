@@ -30,11 +30,13 @@
           domicile pour les familles, ou lors d’événements pour les écoles,
           mairies, associations et entreprises.
         </div>
-        <Button
-          class="bg-white rounded-xl text-primary-500 w-32 p-4 mt-8 lg:mt-12 text-xl font-bold"
-        >
-          Réserver
-        </Button>
+        <router-link to="/#home-contact">
+          <Button
+            class="bg-white rounded-xl text-primary-500 w-32 p-4 mt-8 lg:mt-12 text-xl font-bold"
+          >
+            Réserver
+          </Button>
+        </router-link>
       </div>
     </div>
   </div>
