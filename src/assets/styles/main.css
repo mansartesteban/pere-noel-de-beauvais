@@ -1,1 +1,194 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary-100: #f5d3d3;
+  --color-primary-200: #eba7a7;
+  --color-primary-300: #e27c7c;
+  --color-primary-400: #d85050;
+  --color-primary-500: #ce2424;
+  --color-primary-600: #a51d1d;
+  --color-primary-700: #7c1616;
+  --color-primary-800: #520e0e;
+  --color-primary-900: #290707;
+}
+
+@font-face {
+  font-family: PermanentMarker;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/ressources/fonts/PermanentMarker/PermanentMarker-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 900;
+  src: url("/ressources/fonts/Poppins/Poppins-Black.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 800;
+  src: url("/ressources/fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/ressources/fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  src: url("/ressources/fonts/Poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/ressources/fonts/Poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/ressources/fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  src: url("/ressources/fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 200;
+  src: url("/ressources/fonts/Poppins/Poppins-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 100;
+  src: url("/ressources/fonts/Poppins/Poppins-Thin.ttf");
+}
+
+/* Italic style */
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 900;
+  src: url("/ressources/fonts/Poppins/Poppins-BlackItalic.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 800;
+  src: url("/ressources/fonts/Poppins/Poppins-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 700;
+  src: url("/ressources/fonts/Poppins/Poppins-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 600;
+  src: url("/ressources/fonts/Poppins/Poppins-SemiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  src: url("/ressources/fonts/Poppins/Poppins-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 400;
+  src: url("/ressources/fonts/Poppins/Poppins-Italic.ttf");
+}
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 300;
+  src: url("/ressources/fonts/Poppins/Poppins-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 200;
+  src: url("/ressources/fonts/Poppins/Poppins-ExtraLightItalic.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 100;
+  src: url("/ressources/fonts/Poppins/Poppins-ThinItalic.ttf");
+}
+
+.section {
+  &:not(.no-gutters):not(:first-child):not(:nth-child(odd)) {
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    margin-top: 6em;
+    margin-bottom: 6em;
+  }
+
+  &:not(.no-gutters):first-child {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  &:nth-child(even) {
+    background: white;
+  }
+
+  &:nth-child(even):before {
+    content: " ";
+    width: 100%;
+    height: 32px;
+    left: 0;
+    right: 0;
+    top: -31px;
+    position: absolute;
+    background: url("/ressources/images/section-before.svg") no-repeat;
+    background-size: cover;
+    -webkit-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+    z-index: -1;
+  }
+
+  &:nth-child(even):after {
+    content: " ";
+    width: 100%;
+    height: 32px;
+    left: 0;
+    right: 0;
+    bottom: -31px;
+    position: absolute;
+    background: url("/ressources/images/section-after.svg") no-repeat;
+    background-size: cover;
+    -webkit-filter: drop-shadow(0 0 25px rgba(0, 0, 0, 1));
+    filter: drop-shadow(0 0 25px rgba(0, 0, 0, 1));
+    z-index: -1;
+  }
+}

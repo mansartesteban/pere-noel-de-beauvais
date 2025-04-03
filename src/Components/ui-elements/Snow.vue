@@ -1,5 +1,5 @@
 <template>
-  <div class="snow-wrapper">
+  <div class="snow-wrapper w-screen">
     <div class="snow layer1 b"></div>
     <div class="snow layer1 a"></div>
     <div class="snow layer1"></div>
@@ -68,53 +68,48 @@
   };
 </script>
 
-<!-- <style lang="scss">
-  .snow-wrapper {
-    position: fixed;
-    width: 100%;
-    height: 80vh;
-    z-index: -1;
-  }
+<style lang="scss">
+  @use "sass:math";
 
   $s1: "";
   $s2: "";
   $s3: "";
-  $max: 500;
+  $max: 220;
   @for $i from 1 through $max {
     $s1: $s1 +
-      random(1000) *
+      math.random(1000) *
       0.1vw +
       " " +
-      random(1000) *
+      math.random(1000) *
       0.1vh +
       " " +
       0 +
       " " +
-      random(50) *
+      math.random(50) *
       -0.01rem +
       #fff;
     $s2: $s2 +
-      random(1000) *
+      math.random(1000) *
       0.1vw +
       " " +
-      random(1000) *
+      math.random(1000) *
       0.1vh +
       " " +
       0 +
       " " +
-      random(50) *
+      math.random(50) *
       -0.01rem +
       #fff;
     $s3: $s3 +
-      random(1000) *
+      math.random(1000) *
       0.1vw +
       " " +
-      random(1000) *
+      math.random(1000) *
       0.1vh +
       " " +
       0 +
       " " +
-      random(50) *
+      math.random(50) *
       -0.01rem +
       #fff;
     @if $i < $max {
@@ -125,7 +120,7 @@
   }
   .snow {
     border-radius: 50%;
-    opacity: 0.75;
+    opacity: 0.66;
     position: absolute;
     top: -100vh;
     animation-name: fall;
@@ -176,4 +171,4 @@
       transform: translateY(300vh);
     }
   }
-</style> -->
+</style>

@@ -3,6 +3,7 @@ import path from "path";
 import Vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
 import AutoImport from "unplugin-auto-import/vite";
+import Component from "unplugin-vue-components/vite";
 
 const root = path.resolve(__dirname);
 
@@ -11,11 +12,9 @@ export default defineConfig({
     Vue(),
     tailwindcss(),
     AutoImport({
-      imports: [
-        // presets
-        "vue",
-      ],
+      imports: ["vue"],
     }),
+    Component(),
   ],
   resolve: {
     alias: {

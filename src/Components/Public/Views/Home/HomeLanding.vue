@@ -1,25 +1,26 @@
 <template>
-  <div class="content section">
-    <div class="landing">
-      <div class="landing-left">
-        <div class="landing-title">Le Père‑Noel de Beauvais</div>
-        <div class="landing-subtitle">
+  <div class="overflow-clip">
+    <div class="flex flex-col gap-16">
+      <div class="flex flex-col gap-16 items-center">
+        <div class="text-4xl text-center font-[PermanentMarker]">
+          Le Père‑Noel<br />de Beauvais
+        </div>
+        <div class="text-2xl text-center font-bold drop-shadow-lg p-12">
           Offrez-vous le père Noël à domicile pour vous et vos proches !
         </div>
-        <div class="landing-text">
-          A l’occasion des fêtes de fin d’années, le père de Noël de Beauvais
-          rajoute votre adresse sur la liste des domiciles où rester plus
-          longtemps pendant sa tournée.
-        </div>
-        <button class="buy-button">Réserver</button>
-      </div>
-      <div class="landing-right">
         <img
-          class="animated-santa"
-          src="/ressources/images/landing-santa-claus.svg"
-          width="100%"
-          alt=""
+          class="md:hidden absolute -z-10 -mt-40 h-full w-full max-w-full object-cover"
+          src="/ressources/images/landing-2.jpg"
         />
+        <img
+          class="hidden md:block absolute left-0 -z-10 -mt-40 h-full w-full max-w-full object-cover object-top"
+          src="/ressources/images/landing-2-full.jpg"
+        />
+        <Button
+          class="bg-white rounded-xl text-primary-500 w-32 p-4 mt-20 text-xl font-bold"
+        >
+          Réserver
+        </Button>
       </div>
     </div>
   </div>

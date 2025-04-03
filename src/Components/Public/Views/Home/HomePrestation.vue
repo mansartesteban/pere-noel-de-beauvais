@@ -1,56 +1,58 @@
 <template>
-  <div
-    class="prestation section"
+  <Section
     id="home-prestation"
+    class="flex flex-col gap-16 my-16"
   >
-    <div class="prestation-title title">Prestations</div>
+    <div class="text-4xl text-center font-[PermanentMarker]">Prestations</div>
 
-    <div class="prestation-content">
-      <div class="prestation-card-parent card-left">
-        <div
-          class="prestation-card"
-          :class="{ 'show-price': showPrice1 }"
-          @click="showPrice1 = !showPrice1"
-        >
-          <div class="prestation-card-title">Passage du Père-Noël</div>
-          <div class="prestation-card-subtitle">- Particulier -</div>
-          <br />
-          <div class="prestation-card-content">
-            <div class="prestation-card-item">15 / 20 Minutes de présence</div>
-            <div class="prestation-card-item">Distribution des cadeaux</div>
-            <div class="prestation-card-item">Photos (Sans supplément)</div>
-          </div>
-        </div>
-        <div class="prestation-card-price">
-          <div class="prestation-card-item">50 € TTC</div>
-          <div class="prestation-card-item">Espèce / Chèque</div>
-        </div>
-      </div>
+    <PrestationCard
+      class="prestation-card"
+      :class="{ 'show-price': showPrice1 }"
+      @click="showPrice1 = !showPrice1"
+    >
+      <template #title>Passage du Père‑Noël à domicile</template>
 
-      <div class="prestation-card-parent card-right">
-        <div
-          class="prestation-card"
-          :class="{ 'show-price': showPrice2 }"
-          @click="showPrice2 = !showPrice2"
-        >
-          <div class="prestation-card-title">Passage du Père-Noël</div>
-          <div class="prestation-card-subtitle">
-            - Professionnels - Associations - Ecoles -
-          </div>
-          <br />
-          <div class="prestation-card-content">
-            <div class="prestation-card-item">Temps de présence à définir</div>
-            <div class="prestation-card-item">Distribution des cadeaux</div>
-            <div class="prestation-card-item">Photos (Sans supplément)</div>
-            <div class="prestation-card-item">Distribution de bonbons</div>
-          </div>
-        </div>
-        <div class="prestation-card-price">
-          <div class="prestation-card-item">Sur devis</div>
-        </div>
+      <template #subtitle>- Particulier -</template>
+      <br />
+      <div>
+        <li>15 / 20 Minutes de présence</li>
+        <li>Distribution des cadeaux</li>
+        <li>Photos (Sans supplément)</li>
       </div>
-    </div>
-  </div>
+      <br />
+      <hr class="my-4" />
+      <div class="text-center">
+        <div>
+          50 € TTC pour le secteur : Beauvais, Tillé, Allone, Voisinlieu,
+        </div>
+        <br />
+        <div>60 € TTC en dehors du secteur ci-dessus</div>
+        <div>Espèce / Chèque</div>
+      </div>
+    </PrestationCard>
+
+    <PrestationCard
+      class="prestation-card"
+      :class="{ 'show-price': showPrice2 }"
+      @click="showPrice2 = !showPrice2"
+    >
+      <template #title>Passage du Père‑Noël</template>
+      <template #subtitle>
+        - Professionnels - Associations - Ecoles -
+      </template>
+      <br />
+      <div>
+        <li>Temps de présence à définir</li>
+        <li>Distribution de cadeau</li>
+        <li>Photos (Sans supplément)</li>
+        <li>Distribution de bonbons</li>
+        <li>Déambulation dans la ville</li>
+        <li>Proposition de décor</li>
+      </div>
+      <hr class="my-4" />
+      <div class="text-center">Sur devis</div>
+    </PrestationCard>
+  </Section>
 </template>
 
 <script>

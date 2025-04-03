@@ -1,9 +1,9 @@
 <template>
-  <div class="container fluid main-content">
+  <div class="pt-40 flex flex-col">
     <HomeLanding></HomeLanding>
+    <HomeContact></HomeContact>
     <HomePresentation></HomePresentation>
     <HomePrestation></HomePrestation>
-    <HomeContact></HomeContact>
 
     <FabButton :show="showFabButton"></FabButton>
   </div>
