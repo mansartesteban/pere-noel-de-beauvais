@@ -42,8 +42,8 @@
         />
       </div>
       <div class="mt-16">
-        <div class="flex flex-col gap-4 items-center">
-          <div class="flex items-center gap-4">
+        <div class="flex flex-col gap-8 items-center">
+          <div class="flex flex-col items-center gap-4">
             <img
               class="icon"
               src="/ressources/icons/telephone.png"
@@ -54,7 +54,7 @@
             <span>06 60 74 36 89</span>
           </div>
 
-          <div class="flex items-center gap-4">
+          <div class="flex flex-col items-center gap-4">
             <img
               class="icon"
               src="/ressources/icons/mailbox.png"
@@ -114,10 +114,6 @@
     };
   });
   const sendMail = (e) => {
-    console.log(
-      "Quelqu'un peut m'aider ? Je ne sais pas comment envoyer des mails via VueJS côté client. Je sais que ça ne devrait pas se faire comme ça mais du coup, quelle serait la bonne méthode pour envoyer un mail en sachant que c'est un site front-end qui n'a pas de back ?"
-    );
-
     form.value.forEach((input) => {
       if (input.name === "email") {
         if (input.model === "") {

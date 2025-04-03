@@ -40,8 +40,7 @@
         <router-link
           class="text-2xl font-[PermanentMarker] text-primary-500"
           :to="link.to"
-          extact
-          @click="toggleMenu(false)"
+          exact
           >{{ link.title }}</router-link
         >
       </template>

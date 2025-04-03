@@ -1,3 +1,4 @@
+import { createWebHistory } from "vue-router";
 import { createRouter } from "vue-router";
 import { createMemoryHistory } from "vue-router";
 
@@ -28,8 +29,23 @@ const routes = [
   },
 ];
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+
+    if (to.hash) {
+      return {
+        el: to.hash,
+        top: 32,
+        behavior: "smooth", // ou 'auto'
+      };
+    }
+
+    return { top: 0 };
+  },
 });
 
 export default (app) => {
