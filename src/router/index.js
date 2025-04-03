@@ -4,17 +4,17 @@ import { createMemoryHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    component: () => import("@/components/public/views/main.vue"),
+    component: () => import("@/components/public/views/Main.vue"),
     children: [
       {
         name: "Home",
         path: "",
-        component: () => import("@/components/public/views/home.vue"),
+        component: () => import("@/components/public/views/Home.vue"),
       },
       {
         name: "Galery",
         path: "galery",
-        component: () => import("@/components/public/views/gallery.vue"),
+        component: () => import("@/components/public/views/Gallery.vue"),
       },
       {
         name: "Legacy",
