@@ -1,5 +1,5 @@
 <template>
-  <div class="snow-wrapper w-screen">
+  <div class="snow-wrapper fixed w-screen">
     <div class="snow layer1 b"></div>
     <div class="snow layer1 a"></div>
     <div class="snow layer1"></div>
