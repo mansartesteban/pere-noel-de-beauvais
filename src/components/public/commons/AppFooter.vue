@@ -1,10 +1,10 @@
 <template>
-  <div class="flex p-8 text-lg justify-between items-start">
-    <div class="flex flex-col">
+  <div class="flex gap-8 p-8 text-md justify-between items-start">
+    <div class="flex flex-col text-sm">
       <router-link :to="{ name: 'Legacy' }">Mentions légales</router-link>
     </div>
     <div class="flex flex-column">
-      <div class="copyrights">
+      <div class="text-right">
         Site développé par
         <a
           href="https://mansartesteban.vercel.app"

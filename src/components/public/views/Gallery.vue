@@ -1,16 +1,18 @@
 <template>
-  <div class="container fluid gallery">
+  <div class="flex flex-col gap-8 items-center p-8 mt-16">
     <img
       v-for="(img, i) in gallery"
       :key="'gallery-img-' + i"
+      class="border-16 shadow-xl rounded-md"
       :src="'/content/gallery/' + img.name"
       @click="zoom(i)"
       alt=""
     />
 
     <div
-      class="overlay-img"
+      class="flex z-20 items-center justify-center bg-black/90 fixed w-screen h-full top-0 left-0 right-0 bottom-0"
       v-if="zoomedImage != null"
+      :class="{ 'block w-auto h-screen': zoomedImage !== null }"
     >
       <img
         :src="'/content/gallery/' + gallery[zoomedImage].name"
@@ -21,61 +23,56 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: "Gallery",
-    data() {
-      return {
-        gallery: [
-          {
-            name: "107168221_2931257567002918_2397109773501569582_n.png",
-            focused: false,
-          },
-          {
-            name: "107717675_2931258720336136_5232563457907433057_n.png",
-            focused: false,
-          },
-          {
-            name: "122959741_135991471604196_8797971541135447841_n.png",
-            focused: false,
-          },
-          {
-            name: "123000856_135991704937506_4392619432641944782_n.png",
-            focused: false,
-          },
-          {
-            name: "123022949_135990881604255_6429294922232336359_n.png",
-            focused: false,
-          },
-          {
-            name: "123025998_135991954937481_6513895523725205188_n.png",
-            focused: false,
-          },
-          {
-            name: "123049843_135992291604114_5956166729340644845_n.png",
-            focused: false,
-          },
-          {
-            name: "134081474_3418018394993497_3738618451935399388_n.png",
-            focused: false,
-          },
-        ],
-        zoomedImage: null,
-      };
-    },
-    methods: {
-      zoom(index) {
-        this.zoomedImage = index;
-        setTimeout(() => {
-          document.body.style.cursor = "pointer";
-          document.body.addEventListener("click", this.unzoom);
-        }, 1);
-      },
-      unzoom() {
-        this.zoomedImage = null;
-        document.body.style.cursor = "initial";
-        document.body.removeEventListener("click", this.unzoom);
-      },
-    },
+<script setup>
+  const gallery = ref([]);
+  const zoomedImage = ref(null);
+
+  onMounted(() => {
+    for (let i = 1; i <= 46; i++) {
+      gallery.value.push({
+        name: `gallery-${i}.png`,
+        focused: false,
+      });
+    }
+  });
+
+  const zoom = (index) => {
+    zoomedImage.value = index;
+    setTimeout(() => {
+      document.body.style.cursor = "pointer";
+      document.body.addEventListener("click", unzoom);
+    }, 1);
   };
+
+  const unzoom = () => {
+    zoomedImage.value = null;
+    document.body.style.cursor = "initial";
+    document.body.removeEventListener("click", unzoom);
+  };
+
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  function checkDirection() {
+    if (touchendX < touchstartX) {
+      // Swipe left
+      zoomedImage.value = Math.min(
+        zoomedImage.value + 1,
+        gallery.value.length - 1
+      );
+    }
+    if (touchendX > touchstartX) {
+      // Swipe right
+      zoomedImage.value = Math.max(zoomedImage.value - 1, 0);
+    }
+  }
+
+  document.addEventListener("touchstart", (e) => {
+    touchstartX = e.changedTouches[0].screenX;
+  });
+
+  document.addEventListener("touchend", (e) => {
+    touchendX = e.changedTouches[0].screenX;
+    checkDirection();
+  });
 </script>
