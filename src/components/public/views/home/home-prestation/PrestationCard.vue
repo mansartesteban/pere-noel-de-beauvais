@@ -10,7 +10,7 @@
     <div class="text-center font-[PermanentMarker] text-xl">
       <slot name="subtitle"></slot>
     </div>
-    <div class="text-lg md:text-lg lg:text-xl">
+    <div class="text-lg md:text-lg lg:text-2xl">
       <slot></slot>
     </div>
   </div>
