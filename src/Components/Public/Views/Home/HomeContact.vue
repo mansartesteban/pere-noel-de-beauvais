@@ -8,7 +8,7 @@
       id="contact-form"
     >
       <div
-        class="bg-white rounded-xl drop-shadow-xl p-4 text-gray-900 text-center"
+        class="bg-white rounded-xl drop-shadow-xl p-4 text-gray-900 text-left"
       >
         <div class="flex flex-col gap-8">
           <div
@@ -20,7 +20,7 @@
             <label :for="input.name">{{ input.label }}</label>
             <input
               v-model="input.model"
-              class="rounded-xl shadow-md p-4 mt-2 w-full placeholder:text-gray-400"
+              class="rounded-xl border border-gray-300 p-4 mt-2 w-full placeholder:text-gray-400"
               :class="{
                 'border border-red-500': input.errors.length > 0,
               }"
@@ -36,10 +36,12 @@
           </div>
         </div>
         <ContactMain v-model="mailContent"></ContactMain>
-        <input
-          type="submit"
-          class="bg-primary-500 text-white px-4 py-2 rounded-xl mt-8"
-        />
+        <div class="flex justify-center">
+          <input
+            type="submit"
+            class="bg-primary-500 text-white px-16 py-4 rounded-xl mt-8"
+          />
+        </div>
       </div>
       <div class="mt-16">
         <div class="flex flex-col gap-8 items-center">

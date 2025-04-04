@@ -6,7 +6,7 @@
     <div class="text-4xl text-center font-[PermanentMarker]">Prestations</div>
 
     <div
-      class="flex flex-col gap-16 lg:gap-32 xl:gap-48 2xl:gap-64 lg:flex-row justify-center"
+      class="flex flex-col items-center lg:items-stretch gap-16 xl:gap-24 2xl:gap-32 lg:flex-row justify-center"
     >
       <PrestationCard>
         <template #title>Passage du Père‑Noël à domicile</template>

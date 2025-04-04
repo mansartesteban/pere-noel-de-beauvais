@@ -3,7 +3,7 @@
     <div class="input-control">
       <label for="type-request">Quel est l'objet de votre demande ?</label>
       <select
-        class="w-full rounded-xl shadow-md p-4 mt-2"
+        class="w-full rounded-xl border border-gray-300 p-4 mt-2"
         id="type-request"
         v-model="mailSubjectSelected"
       >

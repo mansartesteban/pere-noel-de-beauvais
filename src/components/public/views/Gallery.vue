@@ -7,7 +7,7 @@
       v-for="(img, i) in gallery"
       :key="'gallery-img-' + i"
       class="border-16 shadow-xl rounded-md"
-      :src="'/content/gallery/' + img.name"
+      :src="'/content/gallery/thumbs/' + img.name + '.webp'"
       @click="zoom(i)"
       alt=""
     />
@@ -18,7 +18,7 @@
       :class="{ 'block w-auto h-screen': zoomedImage !== null }"
     >
       <img
-        :src="'/content/gallery/' + gallery[zoomedImage].name"
+        :src="'/content/gallery/' + gallery[zoomedImage].name + '.png'"
         class="zoomed"
         alt=""
       />
@@ -34,7 +34,7 @@
   onMounted(() => {
     for (let i = 1; i <= 46; i++) {
       gallery.value.push({
-        name: `gallery-${i}.png`,
+        name: `gallery-${i}`,
         focused: false,
       });
     }

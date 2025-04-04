@@ -1,10 +1,10 @@
 <template>
   <div
-    class="appbar drop-shadow-[0_0_32px_rgba(0,0,0,.33)] flex flex-col lg:flex-row lg:justify-between fixed top-0 w-screen z-1 transition-colors duration-300"
+    class="appbar drop-shadow-[0_0_32px_rgba(0,0,0,.33)] flex flex-col lg:flex-row gap-8 lg:justify-between fixed top-0 w-screen z-1 transition-colors duration-300"
     :class="{
       'bg-white': hasScrolled,
       'lg:justify-center': !hasScrolled,
-      'h-12': hasScrolled && !opened,
+      'h-16 p-2': hasScrolled && !opened,
     }"
   >
     <div
@@ -51,13 +51,15 @@
       </template>
     </nav>
 
-    <nav class="hidden lg:flex gap-8 py-2 px-8">
+    <nav class="hidden lg:flex gap-12 py-2 px-8">
       <template v-for="link in navLinks">
         <router-link
-          class="text-lg lg:text-xl xl:text-2xl font-[PermanentMarker]"
+          class="text-lg relative lg:text-xl xl:text-2xl font-[PermanentMarker]"
           :class="{
-            'text-primary-500': hasScrolled,
-            'text-white': !hasScrolled,
+            'text-primary-500 after:bg-primary-500': hasScrolled,
+            'text-white after:bg-white': !hasScrolled,
+            'after:absolute after:-bottom-4  after:left-1/4 after:right-1/4 after:h-1 ':
+              router.resolve(link.to).fullPath === route.fullPath,
           }"
           :to="link.to"
           exact
@@ -70,11 +72,13 @@
 </template>
 
 <script setup>
-  import { RouterLink } from "vue-router";
+  import { RouterLink, useRouter, useRoute } from "vue-router";
   import { onClickOutside } from "@vueuse/core";
   import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
   const hasScrolled = ref(false);
+  const router = useRouter();
+  const route = useRoute();
 
   window.addEventListener("scroll", (e) => {
     hasScrolled.value = window.scrollY > 0;
