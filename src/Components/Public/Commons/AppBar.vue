@@ -42,7 +42,13 @@
     >
       <template v-for="link in navLinks">
         <router-link
-          class="text-2xl font-[PermanentMarker] text-primary-500"
+          class="text-2xl relative font-[PermanentMarker]"
+          :class="{
+            'text-primary-500 after:absolute after:bg-primary-500 after:-bottom-2 after:xl:-bottom-2 after:left-1/4 after:right-1/4 after:h-1 ':
+              router.resolve(link.to).fullPath === route.fullPath,
+            'text-gray-900':
+              router.resolve(link.to).fullPath !== route.fullPath,
+          }"
           :to="link.to"
           exact
           @click="toggleMenu(false)"
@@ -56,10 +62,17 @@
         <router-link
           class="text-lg relative lg:text-xl xl:text-2xl font-[PermanentMarker]"
           :class="{
-            'text-primary-500 after:bg-primary-500': hasScrolled,
-            'text-white after:bg-white': !hasScrolled,
-            'after:absolute after:-bottom-4  after:left-1/4 after:right-1/4 after:h-1 ':
+            ' after:bg-primary-500': hasScrolled,
+            ' after:bg-white': !hasScrolled,
+            'after:absolute after:-bottom-2 after:xl:-bottom-2  after:left-1/4 after:right-1/4 after:h-1 ':
               router.resolve(link.to).fullPath === route.fullPath,
+            'text-primary-500':
+              router.resolve(link.to).fullPath === route.fullPath &&
+              hasScrolled,
+            'text-white': !hasScrolled,
+            'text-gray-900':
+              router.resolve(link.to).fullPath !== route.fullPath &&
+              hasScrolled,
           }"
           :to="link.to"
           exact
