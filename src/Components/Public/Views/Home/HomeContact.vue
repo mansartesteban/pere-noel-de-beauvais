@@ -20,11 +20,11 @@
             <label :for="input.name">{{ input.label }}</label>
             <input
               v-model="input.model"
-              class="rounded-xl border border-gray-300 p-4 mt-2 w-full placeholder:text-gray-400"
+              class="rounded-xl border border-gray-300 p-4 mt-2 w-full placeholder:text-gray-200 placeholder:italic"
               :class="{
                 'border border-red-500': input.errors.length > 0,
               }"
-              :placeholder="input.placeholder"
+              :placeholder="'Exemple : ' + input.placeholder"
               :type="input.text"
               :id="input.name"
               :name="input.name"

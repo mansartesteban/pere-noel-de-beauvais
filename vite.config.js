@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import path from "path";
 import Vue from "@vitejs/plugin-vue";
-import tailwindcss from "@tailwindcss/vite";
 import AutoImport from "unplugin-auto-import/vite";
+import tailwindcss from "@tailwindcss/vite";
 import Component from "unplugin-vue-components/vite";
 
 const root = path.resolve(__dirname);
