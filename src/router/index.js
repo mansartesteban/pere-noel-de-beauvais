@@ -13,8 +13,8 @@ const routes = [
         component: () => import("@/components/public/views/Home.vue"),
       },
       {
-        name: "Galery",
-        path: "galery",
+        name: "Gallery",
+        path: "gallery",
         component: () => import("@/components/public/views/Gallery.vue"),
       },
       {

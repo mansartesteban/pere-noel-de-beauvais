@@ -1,90 +1,68 @@
 <template>
-  <div
-    ref="galleryElement"
-    class="flex flex-col lg:grid lg:grid-cols-3 gap-8 items-center p-8 mt-16"
-  >
-    <img
-      v-for="(img, i) in gallery"
-      :key="'gallery-img-' + i"
-      class="border-16 shadow-xl rounded-md"
-      :src="'/content/gallery/thumbs/' + img.name + '.webp'"
-      @click="zoom(i)"
-      alt=""
-    />
+  <div class="pt-16 md:pt-32 flex flex-col">
+    <div class="text-center p-8">
+      <h1 class="text-2xl md:text-2xl lg:text-4xl mb-8 font-[PermanentMarker]">
+        Quelques souvenirs magiques en images
+      </h1>
 
-    <div
-      class="flex z-20 items-center justify-center bg-black/90 fixed w-screen h-full top-0 left-0 right-0 bottom-0"
-      v-if="zoomedImage != null"
-      :class="{ 'block w-auto h-screen': zoomedImage !== null }"
-    >
+      <p class="text-lg md:text-lg lg:text-xl">
+        Découvrez quelques-uns des moments de joie et d'émerveillement partagés
+        au fil des années. Chaque sourire est ma plus belle récompense.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-8">
       <img
-        :src="'/content/gallery/' + gallery[zoomedImage].name + '.png'"
-        class="zoomed"
-        alt=""
+        v-for="(img, index) in thumbnails"
+        :key="index"
+        :src="img"
+        class="cursor-pointer border-4 md:border-8 shadow-xl rounded-2xl"
+        @click="openLightbox(index)"
       />
     </div>
+
+    <vue-easy-lightbox
+      :visible="visible"
+      :imgs="images"
+      :index="index"
+      @hide="handleHide"
+    />
   </div>
 </template>
 
-<script setup>
-  const gallery = ref([]);
-  const zoomedImage = ref(null);
-  const galleryElement = ref(null);
-
-  onMounted(() => {
-    for (let i = 1; i <= 46; i++) {
-      gallery.value.push({
-        name: `gallery-${i}`,
-        focused: false,
-      });
-    }
-
-    galleryElement.value.addEventListener("touchstart", (e) => {
-      if (zoomedImage.value !== null) {
-        e.preventDefault();
-      }
-      touchstartX = e.changedTouches[0].screenX;
-    });
-
-    galleryElement.value.addEventListener("touchend", (e) => {
-      touchendX = e.changedTouches[0].screenX;
-      if (zoomedImage.value !== null) {
-        checkDirection();
-      }
-    });
-  });
-
-  const zoom = (index) => {
-    zoomedImage.value = index;
-    setTimeout(() => {
-      document.body.style.cursor = "pointer";
-      document.body.addEventListener("click", unzoom);
-    }, 1);
-  };
-
-  const unzoom = () => {
-    zoomedImage.value = null;
-    document.body.style.cursor = "initial";
-    document.body.removeEventListener("click", unzoom);
-  };
-
-  let touchstartX = 0;
-  let touchendX = 0;
-
-  const checkDirection = () => {
-    if (touchendX < touchstartX) {
-      // Swipe left
-      zoomedImage.value = Math.min(
-        zoomedImage.value + 1,
-        gallery.value.length - 1
-      );
-    }
-    if (touchendX > touchstartX) {
-      // Swipe right
-      zoomedImage.value = Math.max(zoomedImage.value - 1, 0);
-    }
-    if (touchendX === touchstartX) {
-      unzoom();
-    }
+<script>
+  export default {
+    components: { VueEasyLightbox },
   };
 </script>
+
+<script setup>
+  import VueEasyLightbox from "vue-easy-lightbox";
+
+  const images = ref(
+    Array.from(
+      { length: 46 },
+      (_, i) => `/content/gallery/gallery-${i + 1}.png`
+    )
+  );
+  const thumbnails = ref(
+    Array.from(
+      { length: 46 },
+      (_, i) => `/content/gallery/thumbs/gallery-${i + 1}.webp`
+    )
+  );
+
+  const visible = ref(false);
+  const index = ref(0);
+
+  const openLightbox = (i) => {
+    index.value = i;
+    visible.value = true;
+  };
+
+  const handleHide = () => {
+    visible.value = false;
+  };
+</script>
+
+<style lang="css" scoped></style>

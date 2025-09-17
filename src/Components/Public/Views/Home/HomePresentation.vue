@@ -3,13 +3,13 @@
     <div class="flex flex-col gap-32">
       <div class="flex flex-col gap-4">
         <div class="text-xl mb-8 font-bold">
-          🎄 Le Père‑Noël passe chez vous à Beauvais pour les fêtes de fin
-          d’année !
+          🎅 Qui suis-je ? Un artisan de la magie de Noël !
         </div>
         <div class="text-xl text-gray-900 text-justify">
-          À l’occasion des fêtes, le véritable Père‑Noël de Beauvais ajoute
-          votre adresse à sa tournée magique. Il s’arrête plus longtemps chez
-          vous pour faire vivre à votre famille un moment exceptionnel.
+          Bien plus qu'un simple costume, incarner le Père Noël est pour moi une
+          véritable passion. Depuis de nombreuses années, j'ai l'immense
+          privilège d'apporter la joie et l'émerveillement dans les foyers ainsi
+          que dans les cœurs des Beauvaisiens et dans toute la région.
         </div>
         <img
           class="my-8"
@@ -19,33 +19,38 @@
       </div>
 
       <div class="flex flex-col gap-4">
-        <div class="text-xl mb-8 font-bold">
-          🎅 Vivez une rencontre féerique avec le Père‑Noël, directement à
-          domicile.
-        </div>
+        <div class="text-2xl mb-8 font-bold">🎅 Mon Engagement</div>
         <div class="text-xl text-gray-900 text-justify">
-          Pendant environ 15 minutes, plongez dans une parenthèse enchantée aux
-          côtés du célèbre homme en rouge. Une expérience inoubliable à partager
-          avec vos enfants, vos proches et vos amis.
+          <ul class="space-y-8 lg:space-y-16">
+            <li>
+              <strong class="text-primary-500">Authenticité :</strong> Je porte
+              une attention toute particulière aux détails : un costume de haute
+              qualité, une barbe soignée et une attitude bienveillante pour une
+              expérience des plus crédibles.
+            </li>
+            <li>
+              <strong class="text-primary-500">Bienveillance :</strong> Chaque
+              enfant est unique. Mon approche est toujours douce, patiente et à
+              l'écoute, pour que même les plus timides se sentent en confiance
+              et vivent un moment magique.
+            </li>
+            <li>
+              <strong class="text-primary-500">Professionnalisme :</strong>
+              Ponctualité, fiabilité et organisation sont les rênes qui guident
+              chacune de mes prestations. Vous pouvez compter sur moi pour faire
+              de votre événement une réussite.
+            </li>
+            <li>
+              <strong class="text-primary-500">Mon plus grand bonheur ?</strong>
+              Voir cette petite étincelle de croyance pure dans les yeux des
+              enfants, et le sourire attendri des parents. C'est cette magie que
+              je m'efforce de recréer à chaque visite."
+            </li>
+          </ul>
         </div>
         <img
           class="my-8"
           src="/ressources/images/landing-5.jpg"
-          alt=""
-        />
-      </div>
-      <div class="flex flex-col gap-4">
-        <div class="text-xl mb-8 font-bold">
-          📸 Immortalisez la visite du Père‑Noël à votre domicile
-        </div>
-        <div class="text-xl text-gray-900 text-justify">
-          Prenez des photos uniques avec le Père‑Noël chez vous et gardez un
-          souvenir impérissable de cette rencontre. L’occasion rêvée de raconter
-          que le vrai Père Noël est passé à la maison !
-        </div>
-        <img
-          class="my-8"
-          src="/ressources/images/landing-4.jpg"
           alt=""
         />
       </div>

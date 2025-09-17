@@ -73,7 +73,7 @@
     },
     {
       answer: "Expliquez-nous en un peu plus sur votre demande",
-      label: "Je suis professionnel, une association ou un école",
+      label: "Je suis professionnel, une association ou une école",
       value: "4",
     },
     {

@@ -116,7 +116,7 @@
     },
     {
       title: "Galerie",
-      to: { name: "Galery" },
+      to: { name: "Gallery" },
     },
     {
       title: "Contact",

@@ -1,34 +1,42 @@
 <template>
   <img
-    class="md:hidden absolute brightness-50 -z-10 -mt-16 h-screen w-screen max-w-none object-cover"
+    class="background md:hidden fixed brightness-40 -z-10 -mt-16 h-screen w-screen max-w-none object-cover"
     src="/ressources/images/landing-1-mobile.png"
     loading="lazy"
   />
   <img
-    class="hidden md:block brightness-50 absolute left-0 -z-10 -mt-16 md:-mt-32 h-full w-full max-w-full object-cover object-top"
+    class="background hidden md:block brightness-40 fixed left-0 -z-10 -mt-16 md:-mt-32 h-full w-full max-w-full object-cover object-top"
     src="/ressources/images/landing-1-desktop.png"
     loading="lazy"
   />
-  <div class="overflow-clip md:px-4 lg:px-12 xl:px-32">
+  <div class="md:px-4 lg:px-12 xl:px-32">
     <div class="flex flex-col gap-16">
       <div class="flex flex-col gap-12 md:gap-14 xl:gap-16 items-center">
         <div
-          class="text-3xl md:text-5xl xl:text-6xl text-center font-[PermanentMarker]"
+          class="text-4xl md:text-4xl xl:text-5xl font-[PermanentMarker] mb-16 md:mb-12 mx-12 text-justify"
         >
-          Le Père‑Noel<br class="md:hidden" />
-          de Beauvais
+          Ho Ho Ho ! Bienvenue sur le site officiel du Père Noël de Beauvais !
         </div>
+
         <div
-          class="text-xl md:text-2xl xl:text-3xl text-center font-bold drop-shadow-lg p-12 -mt-16 md:-mt-8 xl:mt-0"
+          class="text-lg md:text-xl text-justify md:font-bold drop-shadow-lg p-12 -my-24 md:-my-16 text-shadow-lg"
         >
-          La magie du Père Noël, chez vous ou dans votre ville
-        </div>
-        <div
-          class="text-md md:text-xl text-justify md:font-bold drop-shadow-lg p-12 -my-24 md:-my-16"
-        >
-          Vivez un moment inoubliable en compagnie du véritable Père Noël : à
-          domicile pour les familles, ou lors d’événements pour les écoles,
-          mairies, associations et entreprises.
+          La magie de Noël n'est pas seulement une date dans le calendrier,
+          c'est un sentiment, un souvenir précieux qui se crée en famille.
+          <br />
+          <br />
+          Directement depuis le Pôle Nord, et avec une attache toute
+          particulière pour notre région de l'Oise, je vous propose de donner
+          vie à ce rêve pour vos enfants, votre famille ou vos événements.
+          <br />
+          <br />
+          Imaginez leurs yeux briller de mille feux en me voyant arriver,
+          connaissant leurs petites histoires et apportant avec moi toute la
+          féérie de Noël.
+          <br />
+          <br />
+          Prêts à créer un souvenir inoubliable ? Décourez comment je peux
+          illuminer vos fêtes de fin d'année.
         </div>
         <router-link to="/#home-contact">
           <Button
@@ -41,3 +49,20 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+  @keyframes slide-out {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  .background {
+    animation: slide-out 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 300vh;
+  }
+</style>
