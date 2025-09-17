@@ -16,7 +16,7 @@
         v-for="(img, index) in thumbnails"
         :key="index"
         :src="img"
-        class="cursor-pointer border-4 md:border-8 shadow-xl rounded-2xl"
+        class="cursor-pointer border-4 md:border-8 shadow-xl rounded-lg"
         @click="openLightbox(index)"
       />
     </div>

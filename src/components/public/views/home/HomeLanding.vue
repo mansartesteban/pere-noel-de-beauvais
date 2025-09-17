@@ -63,6 +63,20 @@
   .background {
     animation: slide-out 1s linear both;
     animation-timeline: scroll();
-    animation-range: 0 300vh;
+    animation-range: 60vh 300vh;
+  }
+
+  @media (min-width: 768px) {
+    /* md */
+    .background {
+      animation-range: 35vh 400vh;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    /* lg */
+    .background {
+      animation-range: 10vh 300vh;
+    }
   }
 </style>
