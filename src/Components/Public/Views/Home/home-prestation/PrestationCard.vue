@@ -24,14 +24,14 @@
         </div>
 
         <div
-          class="from-amber-200 to-amber-400 bg-gradient-to-br p-1 m-8 rounded-2xl text-lg md:text-lg lg:text-lg"
+          class="from-amber-200 to-amber-400 bg-gradient-to-br p-1 m-4 md:m-8 rounded-2xl text-lg md:text-lg lg:text-lg"
         >
           <div class="bg-white rounded-2xl text-lg md:text-lg lg:text-lg">
             <div
               class="from-amber-300 to-amber-500 bg-gradient-to-br p-1 rounded-2xl text-lg md:text-lg lg:text-lg"
             >
               <div
-                class="bg-white p-8 rounded-xl text-lg md:text-lg lg:text-lg"
+                class="bg-white p-4 md:p-8 rounded-xl text-lg md:text-lg lg:text-lg"
               >
                 <slot name="footer"></slot>
               </div>
