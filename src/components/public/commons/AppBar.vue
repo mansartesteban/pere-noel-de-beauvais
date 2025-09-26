@@ -1,6 +1,6 @@
 <template>
   <div
-    class="appbar drop-shadow-[0_0_32px_rgba(0,0,0,.33)] flex flex-col lg:flex-row gap-8 lg:justify-between fixed top-0 w-screen z-1 transition-colors duration-300"
+    class="appbar drop-shadow-[0_0_32px_rgba(0,0,0,.33)] flex flex-col lg:flex-row gap-8 lg:justify-between fixed top-0 w-screen z-10 transition-colors duration-300"
     :class="{
       'bg-white': hasScrolled,
       'lg:justify-center': !hasScrolled,
