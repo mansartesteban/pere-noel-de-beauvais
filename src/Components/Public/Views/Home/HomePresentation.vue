@@ -6,7 +6,7 @@
           🎅 Qui suis-je ? Un artisan de la magie de Noël !
         </div>
         <div class="text-xl text-gray-900 text-justify">
-          Bien plus qu'un simple costume, incarner le Père Noël est pour moi une
+          Bien plus qu'un simple costume, incarner le Père Noël est pour moi une
           véritable passion. Depuis de nombreuses années, j'ai l'immense
           privilège d'apporter la joie et l'émerveillement dans les foyers ainsi
           que dans les cœurs des Beauvaisiens et dans toute la région.

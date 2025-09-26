@@ -11,7 +11,7 @@
       class="text-primary-500 text-xl font-[PermanentMarker] p-4"
       :class="{ block: hasScrolled, hidden: !hasScrolled }"
     >
-      Le Père‑Noel de Beauvais
+      Le Père‑Noel de Beauvais
     </div>
     <div
       :class="{ 'opacity-100': hasScrolled || opened }"

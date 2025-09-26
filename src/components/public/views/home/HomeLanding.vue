@@ -13,9 +13,9 @@
     <div class="flex flex-col gap-16">
       <div class="flex flex-col gap-12 md:gap-14 xl:gap-16 items-center">
         <div
-          class="text-4xl md:text-4xl xl:text-5xl font-[PermanentMarker] mb-16 md:mb-12 mx-12 text-justify"
+          class="text-4xl md:text-4xl xl:text-5xl font-[PermanentMarker] mb-16 md:mb-12 mx-12 text-center"
         >
-          Ho Ho Ho ! Bienvenue sur le site officiel du Père Noël de Beauvais !
+          Ho Ho Ho ! Bienvenue sur le site officiel du Père Noël de Beauvais !
         </div>
 
         <div

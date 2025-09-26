@@ -20,14 +20,19 @@
     >
       <!-- Visite à domicile (Le rêve des enfants) -->
       <PrestationCard>
-        <template #title>Visite à domicile (Le rêve des enfants)</template>
+        <template #title>
+          <div class="flex items-center gap-4 md:gap-8 lg:gap-8">
+            <span class="text-4xl md:text-6xl lg:text-6xl">🏠</span>
+            <h3>Visite à domicile (Le rêve des enfants)</h3>
+          </div>
+        </template>
 
         <template #body>
           <p class="text-justify">
             J'arrive chez vous pour une visite surprise qui laissera un souvenir
             impérissable. Je peux distribuer les cadeaux que vous aurez
-            préparés, lire une histoire, prendre des photos avec toute la
-            famille et écouter les souhaits de chacun.
+            préparés, prendre des photos avec toute la famille et écouter les
+            souhaits de chacun.
           </p>
         </template>
         <template #footer>
@@ -37,7 +42,8 @@
               réveillon de Noël, un goûter de l'Avent, une surprise familiale.
             </div>
             <div>
-              <strong class="text-primary-500">Durée :</strong> 30 minutes
+              <strong class="text-primary-500">Durée :</strong> environ 15
+              minutes
             </div>
           </div>
         </template>
@@ -45,7 +51,12 @@
 
       <!--  Animations commerciales et marchés de Noël -->
       <PrestationCard>
-        <template #title>Animations commerciales et marchés de Noël</template>
+        <template #title>
+          <div class="flex items-center gap-4 md:gap-8 lg:gap-8">
+            <span class="text-4xl md:text-6xl lg:text-6xl">🎅</span>
+            <h3>Animations commerciales et marchés de Noël</h3>
+          </div>
+        </template>
 
         <template #body>
           <p class="text-justify">
@@ -72,7 +83,12 @@
 
       <!-- Événements d'entreprise (arbre de Noël) -->
       <PrestationCard>
-        <template #title>Événements d'entreprise (arbre de Noël)</template>
+        <template #title>
+          <div class="flex items-center gap-4 md:gap-8 lg:gap-8">
+            <span class="text-4xl md:text-6xl lg:text-6xl">🏢</span>
+            <h3>Événements d'entreprise (arbre de Noël)</h3>
+          </div>
+        </template>
 
         <template #body>
           <p class="text-justify">
@@ -98,7 +114,12 @@
 
       <!-- Écoles, crèches et associations -->
       <PrestationCard>
-        <template #title>Écoles, crèches et associations</template>
+        <template #title>
+          <div class="flex items-center gap-4 md:gap-8 lg:gap-8">
+            <span class="text-4xl md:text-6xl lg:text-6xl">📚</span>
+            <h3>Écoles, crèches et associations</h3>
+          </div>
+        </template>
 
         <template #body>
           <p class="text-justify">
