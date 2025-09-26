@@ -146,7 +146,8 @@
 }
 
 .section {
-  &:not(.no-gutters):not(:first-child):not(:nth-child(odd)) {
+  z-index: 0;
+  &:not(.no-gutters):not(:first-child):not(:nth-child(odd)) > .section-content {
     padding-top: 15vh;
     padding-bottom: 15vh;
     margin-top: 6em;
@@ -159,37 +160,33 @@
   }
 
   &:nth-child(even) {
-    background: white;
-  }
+    z-index: 1;
+    position: relative;
 
-  &:nth-child(even):before {
-    content: " ";
-    width: 100%;
-    height: 32px;
-    left: 0;
-    right: 0;
-    top: -31px;
-    position: absolute;
-    background: url("/ressources/images/section-before.svg") no-repeat;
-    background-size: cover;
-    -webkit-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
-    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
-    z-index: -1;
-  }
+    & > .section-content {
+      background: white;
+    }
+    & > .section-before,
+    & > .section-after {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      -webkit-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+      z-index: -1;
+      left: 0;
+      right: 0;
+    }
 
-  &:nth-child(even):after {
-    content: " ";
-    width: 100%;
-    height: 32px;
-    left: 0;
-    right: 0;
-    bottom: -31px;
-    position: absolute;
-    background: url("/ressources/images/section-after.svg") no-repeat;
-    background-size: cover;
-    -webkit-filter: drop-shadow(0 0 25px rgba(0, 0, 0, 1));
-    filter: drop-shadow(0 0 25px rgba(0, 0, 0, 1));
-    z-index: -1;
+    & > .section-before {
+      top: calc(-31px + 6rem);
+      background: url("/ressources/images/section-before.svg");
+    }
+    & > .section-after {
+      bottom: calc(-31px + 6rem);
+      background: url("/ressources/images/section-after.svg") bottom center
+        no-repeat;
+    }
   }
 }
 

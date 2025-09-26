@@ -1,15 +1,15 @@
 <template>
-  <img
-    class="background md:hidden fixed brightness-40 z-0 -mt-16 h-screen w-screen max-w-none object-cover"
-    src="/ressources/images/landing-1-mobile.png"
-    loading="lazy"
-  />
-  <img
-    class="background hidden md:block brightness-40 fixed left-0 z-0 -mt-16 md:-mt-32 h-full w-full max-w-full object-cover object-top"
-    src="/ressources/images/landing-1-desktop.png"
-    loading="lazy"
-  />
-  <div class="md:px-4 lg:px-12 xl:px-32">
+  <div class="md:px-4 lg:px-12 xl:px-32 overflow-x-clip">
+    <img
+      class="background md:hidden fixed brightness-40 -mt-16 h-screen w-screen max-w-none object-cover"
+      src="/ressources/images/landing-1-mobile.png"
+      loading="lazy"
+    />
+    <img
+      class="background hidden md:block brightness-40 fixed left-0 -mt-16 md:-mt-32 h-full w-full max-w-full object-cover object-top"
+      src="/ressources/images/landing-1-desktop.png"
+      loading="lazy"
+    />
     <div class="flex flex-col gap-16">
       <div class="flex flex-col gap-12 md:gap-14 xl:gap-16 items-center">
         <div
