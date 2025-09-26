@@ -1,0 +1,8 @@
+{
+  "name": "Père Noël de Beauvais",
+  "short_name": "pere-noel-beauvais",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}
