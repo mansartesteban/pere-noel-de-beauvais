@@ -1,26 +1,17 @@
 <template>
   <div class="md:px-4 lg:px-12 xl:px-32 overflow-x-clip">
-    <img
-      class="background md:hidden fixed brightness-40 -mt-16 h-screen w-screen max-w-none object-cover"
-      src="/ressources/images/landing-1-mobile.png"
-      loading="lazy"
-    />
+    <img class="background md:hidden fixed brightness-40 -mt-16 h-screen w-screen max-w-none object-cover"
+      src="/ressources/images/landing-1-mobile.png" loading="lazy" />
     <img
       class="background hidden md:block brightness-40 fixed left-0 -mt-16 md:-mt-32 h-full w-full max-w-full object-cover object-top"
-      src="/ressources/images/landing-1-desktop.png"
-      loading="lazy"
-    />
+      src="/ressources/images/landing-1-desktop.png" loading="lazy" />
     <div class="flex flex-col gap-16">
       <div class="flex flex-col gap-12 md:gap-14 xl:gap-16 items-center">
-        <div
-          class="text-xl md:text-2xl xl:text-4xl font-[PermanentMarker] mb-16 md:mb-12 mx-12 text-center z-2"
-        >
+        <div class="text-xl md:text-2xl xl:text-4xl font-[PermanentMarker] mb-16 md:mb-12 mx-12 text-center z-2">
           Ho Ho Ho ! Bienvenue sur le site officiel du Père Noël de Beauvais !
         </div>
 
-        <div
-          class="text-lg md:text-xl text-justify md:font-bold drop-shadow-lg p-12 -my-24 md:-my-16 text-shadow-lg"
-        >
+        <div class="text-lg md:text-xl text-justify md:font-bold drop-shadow-lg p-12 -my-24 md:-my-16 text-shadow-lg">
           La magie de Noël n'est pas seulement une date dans le calendrier,
           c'est un sentiment, un souvenir précieux qui se crée en famille.
           <br />
@@ -35,16 +26,11 @@
           féérie de Noël.
           <br />
           <br />
-          Prêts à créer un souvenir inoubliable ? Décourez comment je peux
+          Prêts à créer un souvenir inoubliable ? Découvrez comment je peux
           illuminer vos fêtes de fin d'année.
         </div>
-        <router-link
-          to="/#home-contact"
-          class="z-2"
-        >
-          <Button
-            class="bg-white rounded-xl text-primary-500 w-32 p-4 mt-8 lg:mt-12 text-xl font-bold"
-          >
+        <router-link to="/#home-contact" class="z-2">
+          <Button class="bg-white rounded-xl text-primary-500 w-32 p-4 mt-8 lg:mt-12 text-xl font-bold">
             Réserver
           </Button>
         </router-link>
@@ -54,30 +40,31 @@
 </template>
 
 <style scoped>
-  @keyframes slide-out {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-100%);
-    }
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
   }
 
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.background {
+  animation: slide-out 1s linear both;
+  animation-timeline: scroll();
+  animation-range: 60vh 300vh;
+}
+
+@media (min-width: 768px) {
   .background {
-    animation: slide-out 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 60vh 300vh;
+    animation-range: 35vh 400vh;
   }
+}
 
-  @media (min-width: 768px) {
-    .background {
-      animation-range: 35vh 400vh;
-    }
+@media (min-width: 1024px) {
+  .background {
+    animation-range: 10vh 300vh;
   }
-
-  @media (min-width: 1024px) {
-    .background {
-      animation-range: 10vh 300vh;
-    }
-  }
+}
 </style>
